@@ -13,3 +13,5 @@ RecipesApp — это Android-приложение, написанное на Ko
 Готовый APK можно скачать и установить на телефон:
 
 [Ссылка на APK](https://drive.google.com/file/d/1iS4tFxisue0wkmKcPwVd5wBrf8DL_PYJ/view?usp=sharing)
+
+[Сылка на презентацию](https://docs.google.com/presentation/d/1WNpAH4dq5gfQhe8NAmYxaKSk-5F0r1FE/edit?usp=sharing&ouid=112589251468446441112&rtpof=true&sd=true)
