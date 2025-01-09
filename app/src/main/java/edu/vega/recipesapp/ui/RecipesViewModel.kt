@@ -25,14 +25,23 @@ class RecipesViewModel(
     private val _uiState = MutableStateFlow<UiState>(UiState.Idle)
     val uiState: StateFlow<UiState> = _uiState
 
+    private val _randomRecipes = mutableListOf<Recipe>()
+
     fun fetchRandomRecipes() {
+        _randomRecipes.clear()
+        loadMoreRandomRecipes()
+    }
+
+    fun loadMoreRandomRecipes() {
         _uiState.value = UiState.Loading
         viewModelScope.launch {
             try {
-                val data = repository.getRandomRecipes(
-                    apiKey = BuildConfig.API_KEY
+                val newRecipes = repository.getRandomRecipes(
+                    apiKey = BuildConfig.API_KEY,
+                    count = 5
                 )
-                _uiState.value = UiState.SuccessRandom(data)
+                _randomRecipes.addAll(newRecipes)
+                _uiState.value = UiState.SuccessRandom(_randomRecipes.toList())
             } catch (e: Exception) {
                 _uiState.value = UiState.Error(e.message ?: "Unknown error")
             }

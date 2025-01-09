@@ -1,7 +1,7 @@
-package edu.vega.recipesapp.utils
+    package edu.vega.recipesapp.utils
 
-import androidx.core.text.HtmlCompat
+    import androidx.core.text.HtmlCompat
 
-fun String.stripHtml(): String {
-    return HtmlCompat.fromHtml(this, HtmlCompat.FROM_HTML_MODE_LEGACY).toString()
-}
+    fun String.stripHtml(): String {
+        return HtmlCompat.fromHtml(this, HtmlCompat.FROM_HTML_MODE_LEGACY).toString()
+    }
